@@ -1,0 +1,23 @@
+<h1>All Users</h1>
+ 
+
+<table border="1">
+		<thead>
+			<tr>
+					<td></td>	
+					<td>Email</td>
+					<td></td>
+					<td></td>
+			</tr>
+		</thead>
+		<tbody>
+					<% @users.each do |user| %>
+			<tr>
+					<td><%= user.id %></td>
+					<td><%= user.email %></td>
+					<td><%= link_to 'Edit', edit_user_path(user) %></td>
+					<td><%= link_to 'Destroy', user, method: :delete %></td>
+					<% end %>
+			</tr>
+		</tbody>
+</table>
